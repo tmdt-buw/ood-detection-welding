@@ -32,6 +32,19 @@ python train_CODiT.py
 
 ## Dataset
 
+The dataset can be downloaded from [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15497262.svg)](https://doi.org/10.5281/zenodo.15497262).
+
+### Setup Instructions
+
+1. Download the dataset from the link above
+2. Extract and place the dataset files in the `data/Welding` directory
+3. Run the preprocessing script once to prepare the data:
+
+```bash
+python data/Welding/preprocess_data.py
+```
+
+**Note:** The preprocessing step is required before training any models.
 
 ## MLFlow
 
