@@ -4,7 +4,10 @@ __pycache__/
 *$py.class
 
 # custom
-data/*
+data/Welding/*
+!data/Welding/test_idx.npy
+!data/Welding/val_idx.npy
+!data/Welding/preprocess_data.py
 model_checkpoints/*
 lightning_logs/*
 logs/*
