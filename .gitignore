@@ -1,0 +1,24 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# custom
+data/*
+model_checkpoints/*
+lightning_logs/*
+logs/*
+.vscode/*
+oodprediction/*
+*.ckpt
+artifacts
+venv/*
+venv
+*.pyc
+*.pyo
+*.pyd
+*.pyw
+*.pyz
+*.pywz
+*.pyzw
+mlruns/*
