@@ -26,6 +26,12 @@ The system builds upon a state-of-the-art VQ-VAE Transformer model that combines
 - **Autoregressive Loss**: As an effective indicator for OOD detection
 - **Continual Learning Integration**: Memory-aware adaptation strategies to prevent catastrophic forgetting
 
+## Dataset
+
+The dataset can be downloaded from [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15497262.svg)](https://doi.org/10.5281/zenodo.15497262).
+
+
+
 ## Setup
 
 ```bash
@@ -53,10 +59,6 @@ python train_CODiT.py
 ```bash
 python train_CODiT.py
 ```
-
-## Dataset
-
-The dataset can be downloaded from [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15497262.svg)](https://doi.org/10.5281/zenodo.15497262).
 
 ### Setup Instructions
 
