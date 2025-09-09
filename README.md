@@ -1,6 +1,30 @@
-# OOD Detection for Welding Quality Prediction
+# Out-of-Distribution Detection for Efficient Continual Learning in Quality Prediction for Arc Welding
 
-This repository contains the code for the OOD Detection for Welding Quality Prediction.
+**📄 Paper accepted at CIKM 2025** 
+
+This repository contains the implementation for our research on out-of-distribution (OOD) detection in gas metal arc welding (GMAW) quality prediction. Our work addresses critical challenges in dynamic manufacturing environments where process parameters frequently change, causing distribution shifts that degrade model performance.
+
+## Overview
+
+Modern manufacturing environments are inherently dynamic, with frequent changes in setup, materials, and process parameters creating distribution shifts in sensor data. Traditional machine learning models trained on static distributions struggle to maintain performance across these shifts. Our approach leverages a VQ-VAE Transformer architecture to detect when new data significantly differs from the training distribution, triggering continual learning updates only when necessary.
+
+### Key Contributions
+
+- **Novel OOD Detection Method**: We extend the VQ-VAE Transformer architecture by using its autoregressive loss as a reliable OOD detection mechanism, outperforming conventional reconstruction methods and established baselines like MSP and ODIN.
+
+- **Efficient Continual Learning**: By integrating OOD detection with continual learning strategies, we optimize model adaptation, triggering updates only when necessary and minimizing costly labeling requirements.
+
+- **Real-world Validation**: Experimental validation in real-world welding scenarios demonstrates robust quality prediction capabilities across significant distribution shifts, particularly during transitions between different welding types (e.g., overlap to T-joints).
+
+- **Quantitative Evaluation Metric**: Introduction of a novel metric that simultaneously evaluates OOD detection capability while interpreting in-distribution performance.
+
+### Architecture
+
+The system builds upon a state-of-the-art VQ-VAE Transformer model that combines:
+- **Vector Quantized Variational Autoencoder (VQ-VAE)**: For learning compressed representations of welding sensor data
+- **Transformer Architecture**: For capturing temporal dependencies in welding processes
+- **Autoregressive Loss**: As an effective indicator for OOD detection
+- **Continual Learning Integration**: Memory-aware adaptation strategies to prevent catastrophic forgetting
 
 ## Setup
 
@@ -178,3 +202,34 @@ python train_CODiT.py --use-mlflow
 | | batch-size | [128, 256, 512, 1024] |
 | | epochs | [25, 40, 50] |
 | | seed | [42] |
+
+## Citation
+
+If you use this code or find our work helpful, please cite our paper:
+
+```bibtex
+@inproceedings{hahn2025ood,
+  title={Out of Distribution Detection for Efficient Continual Learning in Quality Prediction for Arc Welding},
+  author={Hahn, Yannik and Voets, Jan and K{\"o}nigsfeld, Antonin and Tercan, Hasan and Meisen, Tobias},
+  booktitle={Proceedings of the 33rd ACM International Conference on Information and Knowledge Management},
+  year={2025},
+  organization={ACM},
+  note={Accepted at CIKM 2025}
+}
+```
+
+**Paper**: [https://arxiv.org/html/2508.16832v1](https://arxiv.org/html/2508.16832v1)
+
+## Abstract
+
+Modern manufacturing relies heavily on fusion welding processes, including gas metal arc welding (GMAW). Despite significant advances in machine learning-based quality prediction, current models exhibit critical limitations when confronted with the inherent distribution shifts that occur in dynamic manufacturing environments. In this work, we extend the VQ-VAE Transformer architecture—previously demonstrating state-of-the-art performance in weld quality prediction—by leveraging its autoregressive loss as a reliable out-of-distribution (OOD) detection mechanism. Our approach exhibits superior performance compared to conventional reconstruction methods, embedding error-based techniques, and other established baselines. By integrating OOD detection with continual learning strategies, we optimize model adaptation, triggering updates only when necessary and thereby minimizing costly labeling requirements. We introduce a novel quantitative metric that simultaneously evaluates OOD detection capability while interpreting in-distribution performance. Experimental validation in real-world welding scenarios demonstrates that our framework effectively maintains robust quality prediction capabilities across significant distribution shifts, addressing critical challenges in dynamic manufacturing environments where process parameters frequently change.
+
+## Authors
+
+- **Yannik Hahn** - Institute for Technologies and Management of Digital Transformation (TMDT), University of Wuppertal
+- **Jan Voets** - Institute for Technologies and Management of Digital Transformation (TMDT), University of Wuppertal  
+- **Antonin Königsfeld** - Institute for Technologies and Management of Digital Transformation (TMDT), University of Wuppertal
+- **Hasan Tercan** - Institute for Technologies and Management of Digital Transformation (TMDT), University of Wuppertal
+- **Tobias Meisen** - Institute for Technologies and Management of Digital Transformation (TMDT), University of Wuppertal
+
+*Corresponding author: yhahn@uni-wuppertal.de*
