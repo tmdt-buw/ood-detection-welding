@@ -1,6 +1,6 @@
 # Out-of-Distribution Detection for Efficient Continual Learning in Quality Prediction for Arc Welding
 
-**📄 Paper accepted at CIKM 2025** 
+**📄 [Paper](https://arxiv.org/html/2508.16832v1) accepted at CIKM 2025** 
 
 This repository contains the implementation for our research on out-of-distribution (OOD) detection in gas metal arc welding (GMAW) quality prediction. Our work addresses critical challenges in dynamic manufacturing environments where process parameters frequently change, causing distribution shifts that degrade model performance.
 
